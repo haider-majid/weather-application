@@ -1,0 +1,30 @@
+{
+    "app": {
+        "title": "Weather App"
+    },
+    "weather": {
+        "search": "Search city...",
+        "temperature": "Temperature",
+        "feels_like": "Feels Like",
+        "temp_min": "Min Temperature",
+        "temp_max": "Max Temperature",
+        "humidity": "Humidity",
+        "wind_speed": "Wind Speed",
+        "pressure": "Pressure",
+        "visibility": "Visibility",
+        "clouds": "Cloud Coverage",
+        "rain": "Rain Volume",
+        "sunrise": "Sunrise",
+        "sunset": "Sunset",
+        "high": "High",
+        "low": "Low",
+        "feels": "Feels",
+        "wind": "Wind",
+        "error": {
+            "no_internet": "No internet connection",
+            "city_not_found": "City not found",
+            "general": "Something went wrong",
+            "city_not_found_message": "We couldn't find the city you're looking for.\nPlease try another city name."
+        }
+    }
+}
