@@ -14,6 +14,7 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:internet_connection_checker/internet_connection_checker.dart'
     as _i973;
+import 'package:weather_app/core/di/register_module.dart' as _i731;
 import 'package:weather_app/core/network/network_info.dart' as _i866;
 import 'package:weather_app/features/weather/data/datasources/weather_remote_data_source.dart'
     as _i355;
@@ -37,6 +38,10 @@ extension GetItInjectableX on _i174.GetIt {
       environment,
       environmentFilter,
     );
+    final registerModule = _$RegisterModule();
+    gh.lazySingleton<_i973.InternetConnectionChecker>(
+        () => registerModule.checker);
+    gh.lazySingleton<_i361.Dio>(() => registerModule.dio());
     gh.factory<_i355.WeatherRemoteDataSource>(
         () => _i355.WeatherRemoteDataSourceImpl(gh<_i361.Dio>()));
     gh.factory<_i866.NetworkInfo>(
@@ -52,3 +57,5 @@ extension GetItInjectableX on _i174.GetIt {
     return this;
   }
 }
+
+class _$RegisterModule extends _i731.RegisterModule {}
